@@ -3,6 +3,7 @@ title: "Windows事件查看器，查看系统重启原因"
 date: 2022-10-31T12:23:53+08:00
 draft: false
 tags: ["Windows"]
+cover: https://5a7845c.webp.li/8CE44AB0-9223-45FF-9C6E-05C337E1E392.jpeg
 ---
 今早打开生产的Windows服务器，发现服务器是重启过了。经过排查是因为Windows Update导致的系统重启。
 > 时间查看器 Windows日志 中筛选事件ID`1074`发现一条重启日志，搜索其中原因代码`0x80020010`，找到是因为系统更新引起的重启\
