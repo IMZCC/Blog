@@ -1,0 +1,74 @@
+---
+title: "OpenSSH Config"
+date: 2019-10-09T21:00:46+08:00
+draft: false
+tags: ["OpenSSH", "SSH"]
+---
+
+## 需求
+
+正常情况下，使用私钥ssh服务器的话，默认是使用.ssh/id_rsa这个文件存放私钥。如果是多台服务器的话就不能正常使用了。所以一个多私钥的需求就产生了。
+
+### 开始施工
+
+1. 生成公钥与私钥`ssh-keygen`，在.ssh/下生成名为'ali_rsa'的公钥与私钥，其中ssh使用的账号与地址为'i@imzcc.com'
+
+   ```shell
+   ssh-keygen -t rsa -f .ssh/ali_rsa -C "i@imzcc.com"
+   ```
+
+2. 在.ssh/目录下 新建config文件
+
+   ```
+   # user@example1.com
+   Host example1.com
+     User root
+     HostName domain1.com
+     PreferredAuthentications publickey
+     IdentityFile .ssh/host1_rsa
+   
+   # user@example2.com
+   Host example2.com
+     User root
+     HostName domain2.com
+     PreferredAuthentications publickey
+     IdentityFile .ssh/host2_rsa
+   
+   ```
+
+3. 测试`ssh user@example1.com`
+
+   不用输入密码即可登入。
+
+   如果无法登录则需要修改ssh服务端配置文件
+
+### 修改ssh服务
+
+1. 修改ssh服务端配置文件
+
+   ```shell
+   vim /etc/ssh/sshd_config
+   ```
+
+   1. 允许root用户登录，增加以下配置
+
+      ```text
+      PermitRootLogin yes
+      ```
+
+   2. 允许私钥登录，增加以下两行
+
+      ```text
+      RSAAuthentication yes
+      PubkeyAuthentication yes
+      ```
+
+2. 重启服务
+
+    ```shell
+    /etc/initd.d/ssh restart
+    ```
+
+
+
+部分方案来自[这里](https://blog.csdn.net/Dong_Alex/article/details/80813816)

@@ -1,0 +1,23 @@
+---
+title: "苹果手机IOS文件应用无法写入Samba4.0+服务，报错未能完成操作 OSStatus 错误 100093"
+date: 2022-08-15T17:25:50+08:00
+draft: false
+---
+
+文件应用内复制文件到自建nas服务中报错，不能完成操作。（OSStatus 错误 100093）
+
+## 编辑samba配置文件
+```bash
+vim /etc/samba/smb.conf
+```
+
+## global节点下增加配置
+```conf
+[global]
+    vfs objects = acl_xattr catia fruit streams_xattr
+```
+
+## 重启smbd服务
+```bash
+systemctl restart smbd
+```

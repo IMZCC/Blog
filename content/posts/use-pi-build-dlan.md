@@ -1,0 +1,62 @@
+---
+title: "使用树莓派搭建DLAN播放器"
+date: 2019-04-12T20:47:00+08:00
+draft: false
+tags: ["Linux", "RaspberryPi", "DLAN"]
+---
+
+# 安装Dlan
+
+本文借鉴国外大神文章文章地址，真的要善用Google搜索引擎，我在百度搜树莓派安装DLNA，有推荐安装miniDLNA的，没有成功，我只是做出了DLNA服务器，没有做出DLNA rander，后来上谷歌搜了下，照着第一篇文章做就成功了。
+
+更换gstreamer源
+看大神的文章讲的是，树莓派上的gstreamer是 0.10版本，而gmrender-resurrect项目需要的版本是1.0，更新源的操作：
+
+使用touch 或者vim 建立一个文件
+```bash
+vim /etc/apt/sources.list.d/upnprender.list
+```
+在文件中添加一下内容
+```bash
+deb http://www.chiark.greenend.org.uk/~christi/debian/ wheezy main
+```
+然后执行 更新源以及安装软件
+```bash
+sudo apt-get update
+sudo apt-get install libupnp-dev libgstreamer1.0-dev gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-alsa
+```
+安装 gmediarender
+```bash
+git clone https://github.com/hzeller/gmrender-resurrect.git
+cd gmrender-resurrect
+sudo apt-get install autoconf
+./autogen.sh
+./configure
+sudo make install
+```
+然后启动gmediarender,可以直接用以下命令启动
+```bash
+gmediarender -I 树莓派IP地址 -f "APP里边发现设备的名字"
+```
+然后还可以把 启动gmediarender添加到启动文件中，开机启动 
+还要把gmediarender移植到openwrt（路由器）上的，参考这个[网址](https://185.es/2015/02/%E6%9E%81%E8%B7%AF%E7%94%B1%E5%AE%9E%E7%8E%B0dlna%E9%9F%B3%E4%B9%90%E6%8E%A8%E9%80%81-gmediarender.html).
+这个网址失效了，大家自行去寻找吧！
+
+# 树莓派一些常用操作
+
+## 1.调整音量大小
+
+```bash
+alsamixer
+```
+
+## 2. 树莓派设置
+
+```bash
+sudo raspi-config
+```
+
+
+
+原文链接:[树莓派搭建DLNA客户端](https://blog.csdn.net/qq_25396349/article/details/52442659)
+

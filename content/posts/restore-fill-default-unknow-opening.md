@@ -1,0 +1,15 @@
+---
+title: "恢复Windows文件默认未知打开方式"
+date: 2019-05-06T20:57:19+08:00
+draft: false
+tags: ["Windows"]
+---
+
+如果一个文件被你设置了,以某个应用程序默认打开,想要清除掉怎么办
+
+首先进入注册表 Win + R 输入 regedit
+```text
+计算机\HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\扩展名(.m3u)
+```
+接着删除 扩展名下的 UserChoice 即可
+此时图标应该未刷新,重启一下资源管理器即可

@@ -1,0 +1,39 @@
+---
+title: "IDEA创建SpringBoot项目，application.yml文件没有自动提示"
+date: 2020-07-29T21:06:02+08:00
+draft: false
+tags: ["IDEA", "Java", "SpringBoot"]
+---
+
+只需要创建一个类
+```java
+import org.springframework.beans.factory.config.YamlPropertiesFactoryBean;
+import org.springframework.core.env.PropertiesPropertySource;
+import org.springframework.core.env.PropertySource;
+import org.springframework.core.io.support.DefaultPropertySourceFactory;
+import org.springframework.core.io.support.EncodedResource;
+
+import java.io.IOException;
+import java.util.Properties;
+
+public class YmlConfigFactory  extends DefaultPropertySourceFactory {
+    @Override
+    public PropertySource<?> createPropertySource(String name, EncodedResource resource) throws IOException {
+        String sourceName = name != null ? name : resource.getResource().getFilename();
+        if (!resource.getResource().exists()) {
+            //不存在就返回一个空的把
+            return new PropertiesPropertySource(sourceName, new Properties());
+        }
+        if (sourceName.endsWith(".yml") || sourceName.endsWith(".yaml")) {
+            //yml这里手动加进去
+            YamlPropertiesFactoryBean factory = new YamlPropertiesFactoryBean();
+            factory.setResources(resource.getResource());
+            factory.afterPropertiesSet();
+            Properties propertiesFromYaml = factory.getObject();
+            return new PropertiesPropertySource(sourceName, propertiesFromYaml);
+        }
+        return super.createPropertySource(name, resource);
+    }
+}
+
+```

@@ -1,0 +1,5 @@
+package*.json
+public
+node_modules
+themes
+.hugo_build.lock

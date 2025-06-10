@@ -1,0 +1,10 @@
+---
+title: "Git自用手册"
+date: 2022-01-13T21:27:56+08:00
+draft: false
+tags: ["Git"]
+---
+> commit后，修改注释，打开vim编辑器编辑后保存即可
+``` bash
+git commit --amend
+```

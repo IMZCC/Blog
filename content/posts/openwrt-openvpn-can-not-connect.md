@@ -1,0 +1,31 @@
+---
+title: "OpenWRT下安装OpenVpn后无法连接"
+date: 2021-07-08T21:11:01+08:00
+draft: false
+tags: ["OpenWRT", "OpenVPN"]
+---
+## 尝试再防火墙加入此配置
+
+1. 首先在 /etc/config/firewall 文件最后添加如下规则：
+    ``` text
+    config rule                                            
+        option target 'ACCEPT'                        
+        option name 'Allow-OpenVPN-Wan-Inbound'       
+        option src 'wan'                              
+        option proto 'udp'                            
+        option dest_port '1194'
+    ```
+
+
+
+2. 然后在 /etc/firewall.user 文件最后添加如下规则：
+    ``` bash
+    iptables -t nat -A prerouting_wan_rule -p udp --dport 1194 -j ACCEPT
+    iptables -A input_wan_rule -p udp --dport 1194 -j ACCEPT
+    iptables -I INPUT -i tun+ -j ACCEPT
+    iptables -I FORWARD -i tun+ -j ACCEPT
+    iptables -I OUTPUT -o tun+ -j ACCEPT
+    iptables -I FORWARD -o tun+ -j ACCEPT
+    ```
+
+

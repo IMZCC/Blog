@@ -1,0 +1,31 @@
+---
+title: "Springboot Mybatis Insert Exception"
+date: 2021-04-30T21:09:43+08:00
+draft: false
+tags: ["IDEA", "Java", "SpringBoot", "Mybatis", "Exception"]
+---
+## 问题描述
+
+今天改公司模块功能的时候，给一个服务增加入库操作；新建一个表，将账户登录状态写入 MySQL，使用 SpringBoot+Mybatis，出现`\xE6\x88\x90\xE5\x8A\x9F`这种的异常报错。
+
+现记录问题解决方法。
+
+### 异常信息
+
+```java
+Incorrect string value: '\xE6\x88\x90\xE5\x8A\x9F' for column 'message' at row 1
+```
+
+### 问题分析
+
+应该是中文编码的问题，首先本地调试输出没有问题，推测应该是插入到 MySQL 数据库中出现的问题。
+
+数据表默认的编码为`latin1` ，不支持中文，所以插入中文时会报错异常。
+
+### 解决方案
+
+将表编码改为 UTF8 即可。
+
+```mysql
+ALTER TABLE 表名 CONVERT TO CHARACTER SET utf8mb4;
+```

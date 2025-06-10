@@ -1,0 +1,13 @@
+---
+title: "记IDEA 2021.3 自带Maven3.8+ 不支持http的仓库"
+date: 2021-12-01T21:25:22+08:00
+draft: false
+tags: ["Java", "IDEA", "Maven"]
+---
+2021年12月1日升级的IDEA 2021.3m，升级后发现依赖无法加载了，github搜到个结果说Maven 3.8后只支持https了
+so，下一个maven 3.6.3，reload maven，果断复活了
+
+[Github结果][1]
+
+
+  [1]: https://github.com/tr7zw/Item-NBT-API/issues/129

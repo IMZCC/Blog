@@ -1,0 +1,119 @@
+---
+title: "Linux Firewalld"
+date: 2021-10-18T21:14:56+08:00
+draft: false
+tags: ["Linux", "Firewalld"]
+---
+## 查看已启动的服务列表：
+``` bash
+systemctl list-unit-files | grep enabled
+```
+
+## 查看启动失败的服务列表：
+``` bash
+systemctl --failed
+```
+
+## 配置 firewalld-cmd
+
+###  查看firewalld-cmd
+
+- 查看所有打开的端口： 
+
+  ``` shell
+  firewall-cmd --zone=public --list-ports
+  ```
+  
+- 更新防火墙规则：
+
+  ``` shell
+  firewall-cmd --reload
+  ```
+
+- 查看区域信息: 
+
+  ``` shell
+  firewall-cmd --get-active-zones
+  ```
+
+- 查看指定接口所属区域： 
+
+  ``` shell
+  firewall-cmd --get-zone-of-interface=eth0
+  ```
+
+- 拒绝所有包：
+
+  ``` shell
+  firewall-cmd --panic-on
+  ```
+  
+- 取消拒绝状态： 
+
+  ``` shell
+  firewall-cmd --panic-off
+  ```
+
+- 查看是否拒绝：
+
+  ``` shell
+  firewall-cmd --query-panic
+  ```
+
+### 配置 firewalld-cmd
+
+- 添加
+  ``` shell
+  firewall-cmd --zone=public --add-port=80/tcp --permanent （--permanent 永久生效，没有此参数重启后失效）
+  ```
+
+- 重新载入
+
+  ``` shell
+  firewall-cmd --reload
+  ```
+
+- 查看
+
+  ``` shell
+  firewall-cmd --zone=public --query-port=80/tcp
+  ```
+
+- 删除
+
+  ``` shell
+  firewall-cmd --zone=public --remove-port=80/tcp --permanent
+  ```
+
+- 查看 firewall 是否运行，下面两个命令都可以
+
+  ``` shell
+  systemctl status firewalld.service
+  firewall-cmd --state
+  ```
+
+- 查看当前开了哪些端口
+
+  ``` shell
+  firewall-cmd --list-services
+  ```
+
+**其实一个服务对应一个端口，每个服务对应 /usr/lib/firewalld/services 下面一个 xml 文件。**
+
+- 查看还有哪些服务可以打开
+
+  ``` shell
+  firewall-cmd --get-services
+  ```
+
+- 查看所有打开的端口：
+
+  ``` shell
+  firewall-cmd --zone=public --list-ports
+  ```
+
+- 更新防火墙规则：
+
+  ``` shell
+  firewall-cmd --reload
+  ```

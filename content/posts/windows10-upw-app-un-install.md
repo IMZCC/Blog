@@ -1,0 +1,36 @@
+---
+title: "Windows10预装应用的安装与卸载"
+date: 2019-04-12T20:52:00+08:00
+draft: false
+tags: ["Windows", "UWP"]
+---
+
+## 获取当前系统安装的所有UWP应用。
+
+``` powershell
+Get-AppxPackage -allusers | Select Name, PackageFullName
+```
+
+
+## 删除所有Windows10内置UWP应用
+以管理员身份运行Windows PowerShell, 删除Windows10所有的内置应用
+``` powershell
+Get-AppxPackage -AllUsers | Remove-AppxPackage
+```
+
+## 应用商店的重装
+在列表中找到名称为“Microsoft.WindowsStore”(即应用商店)的应用，然后复制右侧对应的包名称。Microsoft.WindowsStore_11811.1001.18.0_x64__8wekyb3d8bbwe
+> 1809下默认store版本的路径，如版本不一致，请查看上一部获得的路径，并更改
+``` powershell
+Add-appxpackage -register "C:\Program Files\WindowsApps\Microsoft.WindowsStore_11910.1002.5.0_x64__8wekyb3d8bbwe\appxmanifest.xml" -disabledevelopmentmode
+```
+## 删除某个应用
+``` powershell
+remove-appxpackage [PackageFullName]
+```
+## Xbox游戏无法登录则安装这个
+``` powershell
+Add-appxpackage -register "C:\Program Files\WindowsApps\Microsoft.XboxIdentityProvider_12.50.6001.0_x64__8wekyb3d8bbwe\appxmanifest.xml" -disabledevelopmentmode
+
+Add-appxpackage -register "C:\Program Files\WindowsApps\Microsoft.XboxApp_48.49.31001.0_x64__8wekyb3d8bbwe\appxmanifest.xml" -disabledevelopmentmode
+```

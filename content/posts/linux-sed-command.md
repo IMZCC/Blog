@@ -1,0 +1,141 @@
+---
+title: "Linux Sed Command"
+date: 2021-01-14T21:06:47+08:00
+draft: false
+tags: ["Linux", "Sed", "Command"]
+---
+Linux Sed：Stream Editor文本流编辑
+
+## Sed命令 - 查找替换
+
+``` bash
+sed -i 's/Search_String/Replacement_String/g' Input_File
+```
+
+- `sed`：命令
+- `-i`：默认情况下，`sed` 打印结果到标准输出。当你使用 `sed` 添加这个选项时，那么它会在适当的位置修改文件。当你添加一个后缀（比如，`-i.bak`）时，就会创建原始文件的备份。
+- `s`：字母 `s` 是一个替换命令。
+- `Search_String`：搜索一个给定的字符串或正则表达式。
+- `Replacement_String`：替换的字符串。
+- `g`：全局替换标志。默认情况下，`sed` 命令替换每一行第一次出现的模式，它不会替换行中的其他的匹配结果。但是，提供了该替换标志时，所有匹配都将被替换。
+- `/`：分界符。
+- `Input_File`：要执行操作的文件名。
+
+
+### 1. 查找和替换一行中“第一次”模式匹配
+
+``` bash
+sed 's/unix/linux/' sed-test.txt
+```
+
+### 2. 查找和替换每一行中“第 N 次”出现的模式
+
+``` bash
+sed 's/unix/linux/2' sed-test.txt
+```
+
+### 3. 搜索和替换一行中所有的模式实例
+
+```bash
+sed 's/unix/linux/g' sed-test.txt
+```
+
+### 4. 查找和替换一行中从“第 N 个”开始的所有匹配的模式实例
+
+```bash
+sed 's/unix/linux/2g' sed-test.txt
+```
+
+### 5. 在特定的行号搜索和替换模式
+
+```bash
+sed '3 s/unix/linux/' sed-test.txt
+```
+
+### 6. 在特定范围行号间搜索和替换模式
+
+```bash
+sed '1,3 s/unix/linux/' sed-test.txt
+```
+
+### 7. 查找和修改最后一行的模式
+
+```bash
+sed '$ s/Linux/Unix/' sed-test.txt
+```
+
+### 8. 在一行中只查找和替换正确的模式匹配
+
+> 子串 `linuxunix` 被替换为在第 6 个示例中的 `linuxlinux`。如果你只想更改正确的匹配词，在搜索串的两端用这个边界符 `\b
+
+```bash
+sed '1,3 s/\bunix\b/linux/' sed-test.txt
+```
+
+### 9. 不区分大小写来搜索与替换模式
+
+```bash
+sed 's/unix/linux/gI' sed-test.txt
+```
+
+### 10. 查找和替换包含分隔符的字符串
+
+```bash
+sed 's/\/bin\/bash/\/usr\/bin\/fish/g' sed-test.txt
+```
+
+### 11. 以给定的模式来查找和替换数字
+
+```bash
+sed 's/[0-9]/number/g' sed-test.txt
+```
+
+### 12. 仅查找和替换两个数字
+
+```bash
+sed 's/\b[0-9]\{2\}\b/number/g' sed-test.txt
+```
+
+### 13. sed 命令仅打印被替换的行
+
+```bash
+sed -n 's/Unix/Linux/p' sed-test.txt
+```
+
+- `p` - 它在终端上输出替换的行两次。
+- `-n` - 它抑制由 `p` 标志所产生的重复行。
+
+### 14. 同时运行多个 sed 命令
+```bash
+sed -e 's/linuxunix/LINUXUNIX/g' -e 's/CentOS/RHEL8/g' sed-test.txt
+```
+
+以下 `sed` 的命令搜索 `linuxunix` 和 `CentOS` 模式，用 `Fedora30` 替换它们。
+
+```bash
+sed -e 's/\(linuxunix\|CentOS\)/Fedora30/g' sed-test.txt
+```
+
+### 15. 给定的模式匹配，如何查找和替换整个行
+
+```bash
+sed '/OS/ c\
+New Line
+' sed-test.txt
+```
+
+### 16. 搜索和替换相匹配的模式行
+
+```bash
+sed '/OS/ s/Linux/ArchLinux/' sed-test.txt
+```
+
+## sed查看时间段日志
+```bash
+sed -n '/2021-01-15 09:15:[0-9][0-9]/,/2021-01-15 09:15:[0-9][0-9]/p' log.log
+```
+
+## sed在最后一行添加
+```bash
+sed -i '$a\stdout_logfile_backups=0' path
+```
