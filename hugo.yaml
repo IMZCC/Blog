@@ -299,7 +299,7 @@ markup:
   highlight:
     codeFences: true
     guessSyntax: false
-    lineNos: false
+    lineNos: true
     lineNumbersInTable: false # Set to false
     noClasses: false
     style: github # No need to change
