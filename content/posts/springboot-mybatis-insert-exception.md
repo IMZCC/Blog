@@ -3,6 +3,7 @@ title: "Springboot Mybatis Insert Exception"
 date: 2021-04-30T21:09:43+08:00
 draft: false
 tags: ["IDEA", "Java", "SpringBoot", "Mybatis", "Exception"]
+cover: "https://t.alcy.cc/moe?random={{ math.Rand }}"
 ---
 ## 问题描述
 

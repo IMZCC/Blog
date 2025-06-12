@@ -1,5 +1,5 @@
 baseURL: https://www.imzcc.com/
-languageCode: cn_ZH
+languageCode: zh-cn
 defaultContentLanguage: zh-cn
 defaultContentLanguageInSubdir: false
 title: 苹果派派
@@ -72,7 +72,7 @@ menus:
 
   # footer menu
   footer:
-    - name: About
+    - name: nav.about
       pageRef: /about
       weight: 10
       params:

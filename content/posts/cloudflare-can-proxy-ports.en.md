@@ -1,5 +1,5 @@
 ---
-title: "Cloudflare 可以代理的端口"
+title: "Cloudflare port that can be proxy"
 date: 2021-07-09T21:11:38+08:00
 draft: false
 tags: ["Cloudflare"]
@@ -7,7 +7,7 @@ categories: ["随笔"]
 cover: "https://t.alcy.cc/moe?random={{ math.Rand }}"
 ---
 
-## HTTP ports supported by Cloudflare:
+## HTTP ports supported by Cloudflare
 
 ```text
 80
@@ -19,7 +19,7 @@ cover: "https://t.alcy.cc/moe?random={{ math.Rand }}"
 2095
 ```
 
-## HTTPS ports supported by Cloudflare:
+## HTTPS ports supported by Cloudflare
 
 ```text
 443

@@ -4,6 +4,7 @@ date: 2021-02-23T21:08:44+08:00
 draft: false
 tags: ["Linux", "Centos", "Python"]
 categories: ["Linux", "随笔"]
+cover: "https://t.alcy.cc/moe?random={{ math.Rand }}"
 ---
 
 ## 背景
