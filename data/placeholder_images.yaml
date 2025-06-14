@@ -1,0 +1,15 @@
+# 随机占位图配置文件
+
+# 功能启用开关
+enabled: true
+
+# 图片URL列表（支持外部URL和本地路径）
+images:
+  # Picsum Photos
+  - "https://t.alcy.cc/moe?random=1"
+  - "https://t.alcy.cc/moe?random=2"
+  - "https://t.alcy.cc/moe?random=3"
+  - "https://t.alcy.cc/moe?random=4"
+  - "https://t.alcy.cc/moe?random=5"
+  - "https://t.alcy.cc/moe?random=6"
+  - "https://t.alcy.cc/moe?random=7"

@@ -4,7 +4,6 @@ date: 2021-07-09T21:11:38+08:00
 draft: false
 tags: ["Cloudflare"]
 categories: ["随笔"]
-cover: "https://t.alcy.cc/moe?random={{ math.Rand }}"
 ---
 
 ## HTTP ports supported by Cloudflare:

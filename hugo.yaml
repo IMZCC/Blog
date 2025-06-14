@@ -98,10 +98,10 @@ menus:
         icon: email
 
 params:
+  keywords: ["IMZCC", "苹果派派", "Hugo", "Blog", "Theme", "Technology", "Programming"]
   site:
     description: ""
-    keywords: ["IMZCC", "苹果派派", "Hugo", "Blog", "Theme", "Technology", "Programming"]
-    author: "Hugo Narrow"
+    author: "苹果派派"
 
   logo:
     image: "https://avatars-githubusercontent-webp.webp.se/u/25655983"  # Logo path rel to static folder, leave empty use site title and primary color
