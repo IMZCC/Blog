@@ -20,27 +20,6 @@ languages:
     languageCode: en-US
     languageName: "English"
     weight: 2
-  
-  # ja:
-  #   languageCode: ja-JP
-  #   languageName: "日本語"
-  #   weight: 3
-  # fr:
-  #   languageCode: fr-FR
-  #   languageName: "Français"
-  #   weight: 4
-  # de:
-  #   languageCode: de-DE
-  #   languageName: "Deutsch"
-  #   weight: 5
-  # es:
-  #   languageCode: es-ES
-  #   languageName: "Español"
-  #   weight: 6
-  # ru:
-  #   languageCode: ru-RU
-  #   languageName: "Русский"
-  #   weight: 7
 
 menus:
   main:
@@ -100,7 +79,7 @@ menus:
 params:
   keywords: ["IMZCC", "苹果派派", "Hugo", "Blog", "Theme", "Technology", "Programming"]
   site:
-    description: ""
+    description: "苹果派派"
     author: "苹果派派"
 
   logo:
@@ -138,7 +117,7 @@ params:
   stickyHeader: true  # Set to true to enable sticky navigation bar
 
   # default color scheme
-  colorScheme: "default"
+  colorScheme: "Dracula"
   themes:
     default:
       name: "Default"
@@ -324,11 +303,11 @@ markup:
   highlight:
     codeFences: true
     guessSyntax: false
-    lineNos: true
+    lineNos: false
     lineNumbersInTable: false # Set to false
     noClasses: false
     style: github # No need to change
-    tabWidth: 2
+    tabWidth: 4
 
 
 codeblock:
