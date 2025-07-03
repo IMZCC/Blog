@@ -6,6 +6,14 @@ defaultContentLanguageInSubdir: false
 title: 苹果派派
 theme: "hugo-narrow"
 
+
+hasCJKLanguage: true
+enableEmoji: true
+
+permalinks:
+  posts: /posts/:slug/
+  pages: /:slug/
+  
 # pagination
 pagination:
   pagerSize: 6
@@ -77,10 +85,14 @@ menus:
         icon: email
 
 params:
+  description: "苹果派派"
   keywords: ["IMZCC", "苹果派派", "Hugo", "Blog", "Theme", "Technology", "Programming"]
-  site:
-    description: "苹果派派"
-    author: "苹果派派"
+  defaultAuthor: "苹果派派"  # Default author name, used in posts without an author set
+  author: "苹果派派"
+  language: "zh-cn"
+  shortName: "苹果派派"  # PWA
+  images:
+  - "/images/og-default.avif"
 
   logo:
     image: "https://avatars-githubusercontent-webp.webp.se/u/25655983"  # Logo path rel to static folder, leave empty use site title and primary color
@@ -160,7 +172,7 @@ params:
       url: "https://creativecommons.org/licenses/by-nc-sa/4.0/"
       displayName: "CC BY-NC-SA 4.0"
 
-  # GLightbox Configuration
+  # GLightbox
   lightbox:
     enabled: true
     loop: true
@@ -172,7 +184,7 @@ params:
     preload: true
     descPosition: bottom
 
-  # Justified Gallery Configuration  
+  # Justified Gallery
   justified_gallery:
     enabled: true
     rowHeight: 300
@@ -217,41 +229,22 @@ params:
     waline:
       serverURL: ""
       lang: "zh-CN"
-      meta: ["nick", "mail", "link"]
-      requiredMeta: ["nick"]
-      placeholder: ""
-      avatar: "mp"
-      pageSize: 10
 
 
     artalk:
       server: ""
       site: ""
-      placeholder: "" 
-      noComment: "" 
-      sendBtn: ""
+      locale: "zh-CN" # String|Object|"auto"
       darkMode: "auto"
       gravatar:
         mirror: "https://cravatar.cn/avatar/"
-      pagination:
-        pageSize: 20
-        autoLoad: true
-      heightLimit:
-        content: 300
-        children: 400
-      imgUpload: false
-      preview: true 
-      countEl: "#ArtalkCount"
 
 
     twikoo:
       envId: ""
       region: "ap-shanghai"
+      path: ""
       lang: "zh-CN"
-      placeholder: "" 
-      avatar: "mp"
-      visitor: true 
-      highlight: true 
 
 
   analytics:
@@ -308,7 +301,7 @@ markup:
     lineNumbersInTable: false # Set to false
     noClasses: false
     style: github # No need to change
-    tabWidth: 4
+    tabWidth: 2
 
 
 codeblock:
