@@ -256,13 +256,13 @@ params:
       enabled: false
       analytics: "your-clarity-analytics-id"
     google:
-      enabled: true
+      enabled: false
       id: "G-LPVY3HRMW9"
     umami: 
-      enabled: false
-      id: "your-umami-website-id"
-      src: "https://umami.com/myscript.js"
-      domains: "example.domain.com"
+      enabled: true
+      id: "1f210821-b96e-4193-b749-832c99a55ff9"
+      src: "https://cloud.umami.is/script.js"
+      domains: "www.imzcc.com"
 
 
   katex:
