@@ -256,8 +256,8 @@ params:
       enabled: false
       analytics: "your-clarity-analytics-id"
     google:
-      enabled: false
-      id: "your-google-analytics-id"
+      enabled: true
+      id: "G-LPVY3HRMW9"
     umami: 
       enabled: false
       id: "your-umami-website-id"
