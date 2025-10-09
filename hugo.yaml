@@ -253,10 +253,10 @@ params:
       enabled: false
       id: "your-baidu-analytics-id"
     clarity:
-      enabled: false
-      analytics: "your-clarity-analytics-id"
-    google:
       enabled: true
+      analytics: "tneyohmuw7"
+    google:
+      enabled: false
       id: "G-LPVY3HRMW9"
     umami: 
       enabled: false
