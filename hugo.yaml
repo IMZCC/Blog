@@ -256,10 +256,10 @@ params:
       enabled: false
       analytics: "your-clarity-analytics-id"
     google:
-      enabled: false
+      enabled: true
       id: "G-LPVY3HRMW9"
     umami: 
-      enabled: true
+      enabled: false
       id: "1f210821-b96e-4193-b749-832c99a55ff9"
       src: "https://cloud.umami.is/script.js"
       domains: "www.imzcc.com"
