@@ -85,6 +85,20 @@ menus:
         icon: email
 
 params:
+  header:
+    sticky: true
+    logo:
+      image: "https://avatars-githubusercontent-webp.webp.se/u/25655983"
+      link: "/"
+    showThemeSwitch: true
+    showDarkModeSwitch: true
+    showLanguageSwitch: true
+    languageSwitchMode: "dropdown"
+  toc:
+    position: left # left | right | card
+    maxWidth: "280px"
+    maxHeight: "80vh"
+
   description: "苹果派派"
   keywords: ["IMZCC", "苹果派派", "Hugo", "Blog", "Theme", "Technology", "Programming"]
   defaultAuthor: "苹果派派"  # Default author name, used in posts without an author set
@@ -93,10 +107,6 @@ params:
   shortName: "苹果派派"  # PWA
   images:
   - "/images/og-default.avif"
-
-  logo:
-    image: "https://avatars-githubusercontent-webp.webp.se/u/25655983"  # Logo path rel to static folder, leave empty use site title and primary color
-    link: "/"                  # click to home page
   
   favicon:
     svg: "https://avatars-githubusercontent-webp.webp.se/u/25655983"        # SVG format favicon (recommended)
@@ -119,14 +129,6 @@ params:
       - name: "Email"
         url: "mailto:i@imzcc.com"
         icon: "email"
-
-  # UI Components Control
-  showThemeSwitch: true      # Set to false to hide theme style switcher (palette icon)
-  showDarkModeSwitch: true   # Set to false to hide dark mode switcher (sun/moon icon)
-  showLanguageSwitch: true   # Set to false to hide language switcher
-
-  # Header sticky effect
-  stickyHeader: true  # Set to true to enable sticky navigation bar
 
   # default color scheme
   colorScheme: "Dracula"
