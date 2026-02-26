@@ -102,7 +102,6 @@ params:
   description: "苹果派派"
   keywords: ["IMZCC", "苹果派派", "Hugo", "Blog", "Theme", "Technology", "Programming"]
   defaultAuthor: "苹果派派"  # Default author name, used in posts without an author set
-  author: "苹果派派"
   language: "zh-cn"
   shortName: "苹果派派"  # PWA
   images:
