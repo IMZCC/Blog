@@ -1,0 +1,53 @@
+main:
+  - identifier: nav.home
+    pageRef: /
+    weight: 10
+    params:
+      icon: home
+  - identifier: nav.posts
+    pageRef: /posts
+    weight: 20
+    params:
+      icon: posts
+  - identifier: nav.categories
+    pageRef: /categories
+    weight: 30
+    params:
+      icon: categories
+  - identifier: nav.tags
+    pageRef: /tags
+    weight: 40
+    params:
+      icon: tags
+  - identifier: nav.archives
+    pageRef: /archives
+    weight: 50
+    params:
+      icon: archive
+
+
+# footer menu
+footer:
+  - name: About
+    pageRef: /about
+    weight: 10
+    params:
+      icon: about
+  - name: RSS Feed
+    url: /index.xml
+    weight: 30
+    params:
+      icon: rss
+
+# footer social link
+social:
+  - name: GitHub
+    url: https://github.com/IMZCC
+    weight: 10
+    params:
+      icon: github
+  - name: Email
+    url: mailto:i@imzcc.com
+    weight: 40
+    params:
+      icon: email

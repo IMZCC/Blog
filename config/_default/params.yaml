@@ -1,0 +1,201 @@
+header:
+  sticky: true
+  logo:
+    image: "https://avatars-githubusercontent-webp.webp.se/u/25655983"
+    link: "/"
+  showThemeSwitch: true
+  showDarkModeSwitch: true
+  showLanguageSwitch: true
+  languageSwitchMode: "dropdown"
+
+toc:
+  enabled: true
+  position: "center"
+
+description: "苹果派派"
+keywords: ["IMZCC", "苹果派派", "Hugo", "Blog", "Theme", "Technology", "Programming"]
+defaultAuthor: "苹果派派"  # Default author name, used in posts without an author set
+language: "zh-cn"
+shortName: "苹果派派"  # PWA
+images:
+- "/images/og-default.avif"
+
+favicon:
+  svg: "https://avatars-githubusercontent-webp.webp.se/u/25655983"        # SVG format favicon (recommended)
+
+seo:
+  enableOpenGraph: true
+  enableTwitterCard: true
+  enableJsonLd: true
+  defaultImage: "/images/og-default.avif"
+
+author:
+  name: "苹果派派"
+  title: "Java、Python爱好者。"
+  description: "啥也不是"
+  avatar: "https://avatars-githubusercontent-webp.webp.se/u/25655983"
+  social:
+    - name: "GitHub"
+      url: "https://github.com/IMZCC"
+      icon: "github"
+    - name: "Email"
+      url: "mailto:i@imzcc.com"
+      icon: "email"
+
+# default color scheme
+colorScheme: "Dracula"
+themes:
+  default:
+    name: "Default"
+    order: 1
+  claude:
+    name: "Claude"
+    order: 2
+  bumblebee:
+    name: "Bumblebee"
+    order: 3
+  emerald:
+    name: "Emerald"
+    order: 4
+  nord:
+    name: "Nord"
+    order: 5
+  sunset:
+    name: "Sunset"
+    order: 6
+  abyss:
+    name: "Abyss"
+    order: 7
+  dracula:
+    name: "Dracula"
+    order: 8
+
+
+home:
+  recentPostsCount: 5 # Number of recent posts to show on the home page
+
+post:
+  showRelated: true           # show related posts
+  relatedPostsCount: 3        # posts number
+
+  license:
+    show: false
+    author: "Hugo Narrow"
+    name: "CC BY-NC-SA 4.0"
+    description: "This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. Please attribute the source, use non-commercially, and maintain the same license."
+    url: "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+    displayName: "CC BY-NC-SA 4.0"
+
+# GLightbox
+lightbox:
+  enabled: true
+  loop: true
+  width: 80vw
+  height: 80vh
+  touchNavigation: true
+  draggable: true
+  zoomable: true
+  preload: true
+  descPosition: bottom
+
+# Justified Gallery
+justified_gallery:
+  enabled: true
+  rowHeight: 300
+  gutter: 30
+  lastRow: center
+  transitionDuration: 0.3s
+  resizeDebounce: 100
+  rowHeightTolerance: 0.25
+  maxRowsCount: 999999
+  calculateItemsHeight: false
+
+# comments
+comments:
+  enabled: false
+  # giscus, disqus, utterances, waline, artalk, twikoo
+  system: "giscus"
+
+  giscus:
+    repo: "tom2almighty/hugo-narrow-giscus"
+    repoId: "R_kgDOO2gwLg"
+    category: "General"
+    categoryId: "DIC_kwDOO2gwLs4CrEaf"
+    mapping: "pathname"
+    strict: "0"
+    reactionsEnabled: "1"
+    emitMetadata: "0"
+    inputPosition: "bottom"
+    theme: "preferred_color_scheme"
+    lang: "en"
+
+  disqus:
+    shortname: ""
+
+
+  utterances:
+    repo: "" 
+    issueTerm: "pathname"
+    label: "comment"
+    theme: "preferred-color-scheme"
+
+
+  waline:
+    serverURL: ""
+    lang: "zh-CN"
+
+
+  artalk:
+    server: ""
+    site: ""
+    locale: "zh-CN" # String|Object|"auto"
+    darkMode: "auto"
+    gravatar:
+      mirror: "https://cravatar.cn/avatar/"
+
+
+  twikoo:
+    envId: ""
+    region: "ap-shanghai"
+    path: ""
+    lang: "zh-CN"
+
+
+analytics:
+  enabled: true
+  baidu:
+    enabled: false
+    id: "your-baidu-analytics-id"
+  clarity:
+    enabled: true
+    id: "tneyohmuw7"
+  google:
+    enabled: false
+    id: "G-LPVY3HRMW9"
+  umami: 
+    enabled: false
+    id: "1f210821-b96e-4193-b749-832c99a55ff9"
+    src: "https://cloud.umami.is/script.js"
+    domains: "www.imzcc.com"
+
+
+katex:
+  enabled: false
+  delimiters:
+    - left: "$$"
+      right: "$$"
+      display: true
+    - left: "$"
+      right: "$"
+      display: false
+    - left: "\\("
+      right: "\\)"
+      display: false
+    - left: "\\["
+      right: "\\]"
+      display: true
+    
+mermaid:
+  enabled: false
+
+
