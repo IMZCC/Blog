@@ -28,7 +28,7 @@ main:
 
 # footer menu
 footer:
-  - name: About
+  - identifier: nav.about
     pageRef: /about
     weight: 10
     params:
