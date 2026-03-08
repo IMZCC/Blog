@@ -7,7 +7,7 @@ header:
   showDarkModeSwitch: true
   showLanguageSwitch: true
   languageSwitchMode: "dropdown"
-
+dock: "float"
 toc:
   enabled: true
   position: "center"
