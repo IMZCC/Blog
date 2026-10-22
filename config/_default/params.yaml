@@ -1,17 +1,3 @@
-header:
-  sticky: true
-  logo:
-    image: "https://avatars-githubusercontent-webp.webp.se/u/25655983"
-    link: "/"
-  showThemeSwitch: true
-  showDarkModeSwitch: true
-  showLanguageSwitch: true
-  languageSwitchMode: "dropdown"
-
-toc:
-  enabled: true
-  position: "center"
-
 description: "苹果派派"
 keywords: ["IMZCC", "苹果派派", "Hugo", "Blog", "Theme", "Technology", "Programming"]
 defaultAuthor: "苹果派派"  # Default author name, used in posts without an author set
@@ -44,32 +30,6 @@ author:
 
 # default color scheme
 colorScheme: "Dracula"
-themes:
-  default:
-    name: "Default"
-    order: 1
-  claude:
-    name: "Claude"
-    order: 2
-  bumblebee:
-    name: "Bumblebee"
-    order: 3
-  emerald:
-    name: "Emerald"
-    order: 4
-  nord:
-    name: "Nord"
-    order: 5
-  sunset:
-    name: "Sunset"
-    order: 6
-  abyss:
-    name: "Abyss"
-    order: 7
-  dracula:
-    name: "Dracula"
-    order: 8
-
 
 home:
   recentPostsCount: 5 # Number of recent posts to show on the home page
