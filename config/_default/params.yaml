@@ -29,7 +29,7 @@ author:
       icon: "email"
 
 # default color scheme
-colorScheme: "Dracula"
+colorScheme: "dracula"
 
 home:
   recentPostsCount: 5 # Number of recent posts to show on the home page
@@ -38,37 +38,26 @@ post:
   showRelated: true           # show related posts
   relatedPostsCount: 3        # posts number
 
-  license:
-    show: false
-    author: "Hugo Narrow"
-    name: "CC BY-NC-SA 4.0"
-    description: "This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. Please attribute the source, use non-commercially, and maintain the same license."
-    url: "https://creativecommons.org/licenses/by-nc-sa/4.0/"
-    displayName: "CC BY-NC-SA 4.0"
+  license: ""
 
 # GLightbox
 lightbox:
   enabled: true
-  loop: true
-  width: 80vw
-  height: 80vh
-  touchNavigation: true
-  draggable: true
-  zoomable: true
-  preload: true
-  descPosition: bottom
 
-# Justified Gallery
-justified_gallery:
+gallery:
   enabled: true
-  rowHeight: 300
-  gutter: 30
-  lastRow: center
-  transitionDuration: 0.3s
-  resizeDebounce: 100
-  rowHeightTolerance: 0.25
-  maxRowsCount: 999999
-  calculateItemsHeight: false
+  defaultLayout: justified
+
+codeblock:
+  collapse:
+    enabled: true
+    defaultState: expanded
+    maxLines: 30
+    collapsedHeight: 120
+
+readingProgress:
+  enabled: true
+  showOnHomepage: false
 
 # comments
 comments:
@@ -122,18 +111,14 @@ comments:
 
 
 analytics:
-  enabled: true
+  provider: clarity
   baidu:
-    enabled: false
     id: "your-baidu-analytics-id"
   clarity:
-    enabled: true
     id: "tneyohmuw7"
   google:
-    enabled: false
     id: "G-LPVY3HRMW9"
   umami: 
-    enabled: false
     id: "1f210821-b96e-4193-b749-832c99a55ff9"
     src: "https://cloud.umami.is/script.js"
     domains: "www.imzcc.com"
