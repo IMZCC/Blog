@@ -63,7 +63,7 @@ readingProgress:
 comments:
   enabled: false
   # giscus, disqus, utterances, waline, artalk, twikoo
-  system: "giscus"
+  provider: "giscus"
 
   giscus:
     repo: "tom2almighty/hugo-narrow-giscus"

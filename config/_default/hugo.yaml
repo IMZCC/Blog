@@ -27,12 +27,12 @@ markup:
       unsafe: true
   highlight:
     codeFences: true
-    guessSyntax: false
-    lineNos: false
+    guessSyntax: true
+    lineNos: true
     lineNumbersInTable: false # Set to false
     noClasses: false
     style: github # No need to change
-    tabWidth: 2
+    tabWidth: 4
 
 
 outputs:
@@ -50,5 +50,5 @@ module:
     extended: true
     min: 0.165.0
   imports:
-    - path: github.com/tom2almighty/hugo-narrow
+    - path: github.com/tom2almighty/hugo-narrow/v2
   
